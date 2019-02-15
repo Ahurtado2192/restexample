@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Route
+spec:
+  port:
+    targetPort: 8282
+  to:
+    kind: Service
+    name: rest-template
+    weight: 100
+  wildcardPolicy: None
+status: {}

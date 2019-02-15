@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:camel="http://camel.apache.org/schema/spring"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+<!-- Define a traditional camel context here -->
+    <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
+<!--        <route id="simple-route">
+            <from id="route-timer" uri="amq:soaptorest"/>
+            <log id="route-log" message=">>> ${body}"/>
+            <removeHeaders id="_removeHeaders1" pattern="*"/>
+            <setHeader headerName="Exchange.HTTP_METHOD" id="_setHeader1">
+                <constant>GET</constant>
+            </setHeader>
+            <to id="_to1" uri="http://camel-webservice-rest-test-spring-boot-alexis.apps.na39.openshift.opentlc.com/api/order/register"/>
+            <log id="_log1" message="${body}"/>
+        </route>
+        <route id="_route1">
+            <from id="_from1" uri="timer://foo?fixedRate=true&amp;period=60000"/>
+            <log id="_log2" message="Read Config Map: {{quickstart.property}} "/>
+        </route>-->
+    </camelContext>
+</beans>

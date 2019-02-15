@@ -1,0 +1,40 @@
+camel:
+  springboot:
+    # The Camel context name
+    name: CamelRestSql
+
+# Binding health checks to a different port
+management:
+  port: 8081
+  address: 0.0.0.0
+# Properties and Server port for Rest
+enviroment:
+  urlmapping: /api/*
+  servlentname: CamelServlet
+server:
+  port: 8282
+  
+# disable all management enpoints except health
+endpoints:
+  enabled: false
+  health:
+    enabled: true
+
+# The application configuration properties
+quickstart:
+  generateOrderPeriod: 10s
+  processOrderPeriod: 40s
+  property: property-from config-map
+activemq:
+  service:
+    host: broker-amq-tcp.test-spring-boot-alexis.svc
+    port: 61616
+  broker:
+    url: tcp://${activemq.service.host}:${activemq.service.port}
+    username: userRoO
+    password: hSycHQ5p
+  concurrent:
+    consumers: 10
+  pool:
+    max:
+      connections: 8     
